@@ -1,6 +1,5 @@
 <template>
     <div class="main">
-        <h1>Catalog</h1>
         <product-catalog/>
         <cart/>
     </div>
@@ -30,7 +29,6 @@ export default {
         max-width: 1200px;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
         margin: 0 auto;
     }
 </style>
