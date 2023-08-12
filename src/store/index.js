@@ -1,14 +1,9 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import { reviewModule } from '@/store/reviewModule';
+
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+    modules: {
+      review: reviewModule,
+    }
 })
