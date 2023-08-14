@@ -6,7 +6,7 @@
             v-for="item in ware"
             :key="id"
             :item_ware="item"
-            @getIdCard="showIdCard"
+            @addInCart="addInCart"
             />
         </div>
     </div>
@@ -14,6 +14,8 @@
 
 <script>
 import ProductItem from "@/components/catalog/ProductItem.vue"
+import { mapGetters, mapActions} from "vuex"
+
 
 export default {
     name: "product-catalog",
@@ -111,16 +113,26 @@ export default {
         }
     },
     methods: {
-        showIdCard(data) {
-            console.log(data)
-        }
+        ...mapActions({
+            "ADD_IN_CART": 'cart/ADD_IN_CART',
+    }),
+        addInCart(data) {
+            this.ADD_IN_CART(data)
+        },
+    },
+    computed: {
+        ...mapGetters({
+            CART_ARR: 'cart/CART_ARR',
+    })
     }
 }
 </script>
 
 <style lang="scss">
     .product-catalog {
-
+        position: absolute;
+        max-width: 1000px;
+        top: 100px;
     }
 
     .product-catalog__list {

@@ -8,17 +8,17 @@
         > 
         <p class="product-item__name">{{ item_ware.name }}</p>
         <p class="product-item__price">Цена: {{ item_ware.price }} р.</p>
-        <my-button @click="getIdCard">Добавить в корзину</my-button>
+        <btn-product @click="addInCart">В корзину</btn-product>
     </div>
 </template>
 
 <script>
-import MyButton from "@/components/UI/MyButton.vue"
+import BtnProduct from "@/components/UI/BtnProduct.vue"
 
 export default {
     name: "product-item",
     components: {
-        MyButton
+        BtnProduct
     },
     props: {
         item_ware: {
@@ -26,8 +26,8 @@ export default {
         }
     },
     methods: {
-        getIdCard() {
-            this.$emit('getIdCard', this.item_ware.id)
+        addInCart() {
+            this.$emit("addInCart", this.item_ware)
         }
     }
 }
@@ -43,4 +43,6 @@ export default {
             width: 100px;
         }
     }
+
+
 </style>

@@ -21,61 +21,16 @@ export default {
 
 <style lang="scss">
     .reviews-item {
+        width: 90px;
+        height: 60px;
         box-shadow: 0 0 6px 0;
         padding: 10px;
         margin-bottom: 15px;
+        font-size: 10px;
+    }
+
+    .reviews-item__title {
+        width: 70px;
+        height: 40px;
     }
 </style>
-
-
-
-
-
-
-
-<!-- <template> -->
-    <!-- require в теге img обязателен (особенность Vue) -->
-    <!-- <div class="product-item"> -->
-        <!-- <img 
-            class="product-item__img" 
-            :src="require('@/assets/img/' + item_ware.id)" 
-            alt="image"
-        >  -->
-        <!-- <p class="product-item__name">{{ item_ware.id }}</p>
-        <p class="product-item__price">Цена: {{ item_ware.email }} р.</p>
-        <my-button @click="getIdCard">Добавить в корзину</my-button>
-    </div> -->
-<!-- </template> -->
-
-<!-- <script>
-import MyButton from "@/components/UI/MyButton.vue"
-
-export default {
-    name: "product-item",
-    components: {
-        MyButton
-    },
-    props: {
-        item_ware: {
-            type: Array
-        }
-    },
-    methods: {
-        getIdCard() {
-            this.$emit('getIdCard', this.item_ware.id)
-        }
-    }
-}
-</script>
-
-<style lang="scss">
-    .product-item {
-        box-shadow: 0 0 6px 0;
-        padding: 10px;
-        margin-bottom: 15px;
-
-        &__img {
-            width: 100px;
-        }
-    }
-</style> -->
