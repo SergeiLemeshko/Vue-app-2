@@ -1,6 +1,8 @@
 <template>
+    <router-link :to="{name: 'cart'}">
+        <div class="product-catalog-in__cart">Корзина: {{ CART_ARR.length }}</div>
+    </router-link>
     <div class="product-catalog">
-        <h1>ProductCatalog</h1>
         <div class="product-catalog__list">
             <product-item
             v-for="item in ware"
@@ -29,6 +31,7 @@ export default {
                     name: "boot 1",
                     price: 2100,
                     id: "1",
+                    article: "F8G",
                     img: "1.jpg",
                     available: true
                 },
@@ -36,6 +39,7 @@ export default {
                     name: "boot 2",
                     price: 3150,
                     id: "2",
+                    article: "NB7",
                     img: "2.jpg",
                     available: true
                 },
@@ -43,6 +47,7 @@ export default {
                     name: "boot 3",
                     price: 4200,
                     id: "3",
+                    article: "2BM",
                     img: "3.jpg",
                     available: false
                 },
@@ -50,6 +55,7 @@ export default {
                     name: "boot 4",
                     price: 5300,
                     id: "4",
+                    article: "HL4",
                     img: "4.jpg",
                     available: true
                 },
@@ -57,6 +63,7 @@ export default {
                     name: "boot 5",
                     price: 6500,
                     id: "5",
+                    article: "3BN",
                     img: "5.jpg",
                     available: false
                 },
@@ -64,6 +71,7 @@ export default {
                     name: "boot 6",
                     price: 8700,
                     id: "6",
+                    article: "CS9",
                     img: "6.jpg",
                     available: true
                 },
@@ -71,6 +79,7 @@ export default {
                     name: "boot 7",
                     price: 2100,
                     id: "7",
+                    article: "ML4",
                     img: "7.jpg",
                     available: true
                 },
@@ -78,6 +87,7 @@ export default {
                     name: "boot 8",
                     price: 3150,
                     id: "8",
+                    article: "FZ5",
                     img: "8.jpg",
                     available: true
                 },
@@ -85,6 +95,7 @@ export default {
                     name: "boot 9",
                     price: 4200,
                     id: "9",
+                    article: "3VV",
                     img: "9.jpg",
                     available: false
                 },
@@ -92,6 +103,7 @@ export default {
                     name: "boot 10",
                     price: 5300,
                     id: "10",
+                    article: "B89",
                     img: "10.jpg",
                     available: true
                 },
@@ -99,6 +111,7 @@ export default {
                     name: "boot 11",
                     price: 6500,
                     id: "11",
+                    article: "DC6",
                     img: "11.jpg",
                     available: false
                 },
@@ -106,6 +119,7 @@ export default {
                     name: "boot 12",
                     price: 8700,
                     id: "12",
+                    article: "J3G",
                     img: "12.jpg",
                     available: true
                 }
@@ -123,7 +137,7 @@ export default {
     computed: {
         ...mapGetters({
             CART_ARR: 'cart/CART_ARR',
-    })
+        })
     }
 }
 </script>
@@ -140,5 +154,13 @@ export default {
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+    }
+
+    .product-catalog-in__cart {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        border: solid 1px rgb(141, 130, 130);
+        padding: 10px;
     }
 </style>
