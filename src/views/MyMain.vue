@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        //для сохранения состояния при изменении URL
+        <!--для сохранения состояния при изменении URL-->
         <keep-alive> 
             <router-view></router-view>
         </keep-alive>

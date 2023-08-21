@@ -27,6 +27,14 @@ export const cartModule = {
         },
         DEL_FROM_CART: (state, index) => {
             state.cart_arr.splice(index, 1);
+        },
+        INCREMENT: (state, index) => {
+            state.cart_arr[index].sum++
+        },
+        DECREMENT: (state, index) => {
+            if(state.cart_arr.length > 1) {
+                state.cart_arr[index].sum--
+            }
         }
     },
     actions: {
@@ -35,6 +43,12 @@ export const cartModule = {
         },
         DEL_FROM_CART({commit}, index) {
             commit("DEL_FROM_CART", index)
+        },
+        INCR_CART_ELEM({commit}, index) {
+            commit("INCREMENT", index)
+        },
+        DECR_CART_ELEM({commit}, index) {
+            commit("DECREMENT", index)
         }
     },
     namespaced: true

@@ -12,7 +12,11 @@
         <div 
             class="cart-item__sum">
             <p>Кол-во:</p>
-            {{ cart_item_info.sum }}
+            <span>
+                <span class="sum__minus" @click="decrElem">-</span>
+                {{ cart_item_info.sum }}
+                <span class="sum__plus" @click="incrElem">+</span>
+            </span>
         </div>
         <btn-product @click="deleteWareFromCart">Delete</btn-product>
     </div>
@@ -37,6 +41,13 @@ export default {
     methods: {
         deleteWareFromCart() {
             this.$emit("deleteWareFromCart")
+        },
+        decrElem() {
+            this.$emit("decrement")
+
+        }, 
+        incrElem() {
+            this.$emit("increment")
         }
     },
     mounted() {
@@ -66,4 +77,9 @@ export default {
     .cart-item__sum {
 
     }
+
+    .sum__minus, .sum__plus {
+        cursor: pointer;
+    }
+
 </style>
