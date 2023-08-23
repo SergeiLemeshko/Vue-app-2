@@ -14,17 +14,19 @@ export default {
 
 <style lang="scss">
 .btn-product {
-    width: 90px;
+    width: 130px;
     height: 35px;
     padding: 6px;
     border-radius: 5px;
     box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
-    background: #e0e0e0;
+    background: #c5c3c3;
     text-decoration: none;
     color: rgb(0, 0, 0);
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     transition: background-color .3s ease;
+    margin-bottom: 15px;
+    cursor: pointer;
 
     &:hover {
         background: darken(#c2bdbf, 7%);

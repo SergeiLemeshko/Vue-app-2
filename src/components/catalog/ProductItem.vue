@@ -37,10 +37,23 @@ export default {
     .product-item {
         box-shadow: 0 0 6px 0;
         padding: 10px;
-        margin-bottom: 15px;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         &__img {
-            width: 100px;
+            display: block;
+            width: 200px;
         }
     }
+    .product-item__name {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .product-item__price {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
 </style>

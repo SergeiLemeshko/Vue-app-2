@@ -1,6 +1,8 @@
 <template>
     <router-link :to="{name: 'cart'}">
-        <div class="product-catalog-in__cart">Корзина: {{ CART_ARR.length }}</div>
+        <div class="product-catalog-in__cart">
+            <span>{{ CART_ARR.length }}</span>
+        </div>
     </router-link>
     <div class="product-catalog">
         <div class="product-catalog__list">
@@ -28,7 +30,7 @@ export default {
         return {
             ware: [
                 {
-                    name: "boot 1",
+                    name: "Туфли мужские BNAW23-50",
                     price: 2100,
                     id: "1",
                     article: "F8G",
@@ -36,7 +38,7 @@ export default {
                     available: true
                 },
                 {
-                    name: "boot 2",
+                    name: "Туфли мужские BVNW23-20",
                     price: 3150,
                     id: "2",
                     article: "NB7",
@@ -44,7 +46,7 @@ export default {
                     available: true
                 },
                 {
-                    name: "boot 3",
+                    name: "Туфли мужские VBAJ33-00",
                     price: 4200,
                     id: "3",
                     article: "2BM",
@@ -52,7 +54,7 @@ export default {
                     available: false
                 },
                 {
-                    name: "boot 4",
+                    name: "Туфли мужские GSLE44-07",
                     price: 5300,
                     id: "4",
                     article: "HL4",
@@ -60,7 +62,7 @@ export default {
                     available: true
                 },
                 {
-                    name: "boot 5",
+                    name: "Туфли мужские M54HJD-73",
                     price: 6500,
                     id: "5",
                     article: "3BN",
@@ -68,7 +70,7 @@ export default {
                     available: false
                 },
                 {
-                    name: "boot 6",
+                    name: "Туфли мужские BNAW23-V0",
                     price: 8700,
                     id: "6",
                     article: "CS9",
@@ -76,7 +78,7 @@ export default {
                     available: true
                 },
                 {
-                    name: "boot 7",
+                    name: "Туфли мужские 25BDGF-84",
                     price: 2100,
                     id: "7",
                     article: "ML4",
@@ -84,7 +86,7 @@ export default {
                     available: true
                 },
                 {
-                    name: "boot 8",
+                    name: "Туфли мужские BGD75D-BV",
                     price: 3150,
                     id: "8",
                     article: "FZ5",
@@ -92,7 +94,7 @@ export default {
                     available: true
                 },
                 {
-                    name: "boot 9",
+                    name: "Туфли мужские BCPP7R-56",
                     price: 4200,
                     id: "9",
                     article: "3VV",
@@ -100,7 +102,7 @@ export default {
                     available: false
                 },
                 {
-                    name: "boot 10",
+                    name: "Туфли мужские 45BNNB-22",
                     price: 5300,
                     id: "10",
                     article: "B89",
@@ -108,7 +110,7 @@ export default {
                     available: true
                 },
                 {
-                    name: "boot 11",
+                    name: "Туфли мужские XXNM55-11",
                     price: 6500,
                     id: "11",
                     article: "DC6",
@@ -116,7 +118,7 @@ export default {
                     available: false
                 },
                 {
-                    name: "boot 12",
+                    name: "Туфли мужские CRTY33-90",
                     price: 8700,
                     id: "12",
                     article: "J3G",
@@ -150,17 +152,27 @@ export default {
     }
 
     .product-catalog__list {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+        gap: 90px;
         align-items: center;
         justify-content: space-between;
+        margin-bottom: 50px;
     }
 
     .product-catalog-in__cart {
         position: absolute;
-        top: 20px;
-        right: 25px;
-        border: solid 1px rgb(141, 130, 130);
+        width: 60px;
+        height: 60px;
+        top: 80px;
+        right: 125px;
         padding: 10px;
+        background-image: url(@/assets/svg/cart.svg);
+        background-repeat: no-repeat;
+
+        span {
+            margin-left: 60px;
+            font-size: 40px;
+        }
     }
 </style>
