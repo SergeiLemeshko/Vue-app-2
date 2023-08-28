@@ -5,9 +5,10 @@
         </div>
     </router-link>
     <div class="product-catalog">
+        <input v-model="searchWare"/>
         <div class="product-catalog__list">
             <product-item
-            v-for="item in ware"
+            v-for="item in searchProducts"
             :key="id"
             :item_ware="item"
             @addInCart="addInCart"
@@ -125,7 +126,8 @@ export default {
                     img: "12.jpg",
                     available: true
                 }
-            ]
+            ],
+            searchWare: ""
         }
     },
     methods: {
@@ -139,7 +141,12 @@ export default {
     computed: {
         ...mapGetters({
             CART_ARR: 'cart/CART_ARR',
-        })
+        }),
+        //Поиск по имени
+        searchProducts() {
+            let productList = this.ware;
+            return productList.filter(item => item.name.includes(this.searchWare))
+        }
     }
 }
 </script>
