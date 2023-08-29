@@ -7,7 +7,7 @@
         >
         <div class="cart-item__info">
             <p>{{ cart_item_info.name }}</p>
-            <p>{{ cart_item_info.price }}</p>
+            <p>Цена:{{ cart_item_info.price }}</p>
         </div>
         <div 
             class="cart-item__sum">
@@ -62,11 +62,16 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: rgb(222, 243, 243);
-        margin: 15px;
+        margin: 45px;
+        padding: 0px 25px;
+        border: 1px groove #93e6c6;
+        box-shadow: 0px 1px 19px -5px rgba(61,148,138,0.95);
+                    -webkit-box-shadow: 0px 1px 19px -5px rgba(61,148,138,0.95);
+                    -moz-box-shadow: 0px 1px 19px -5px rgba(61,148,138,0.95);
+        width: 700px;
 
         &__img {
-            width: 60px;
+            width: 200px;
         }
     }
 

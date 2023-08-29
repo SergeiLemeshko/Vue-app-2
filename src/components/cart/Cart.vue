@@ -1,9 +1,14 @@
 <template>
     <div class="cart">
         <router-link :to="{name: 'catalog'}">
-            <div class="product-catalog-in__cart">Назад</div>
+            <div class="product-catalog-in__cart">
+                <p>Назад</p>
+            </div>
         </router-link>
-        <p v-if="!CART_ARR.length">Корзина пустая</p>
+            <p class="cart-empty" 
+                v-if="!CART_ARR.length">
+                Корзина пустая
+            </p>
         <cart-item
             v-for="(elem, index) in CART_ARR"
             :key="elem.id"
@@ -77,25 +82,38 @@ export default {
 
 <style lang="scss">
 .cart {
-    position: absolute;
-    background-color: rgb(206, 158, 100);
-    top: 650px;
     display: flex;
-    margin: 0 auto;
+    flex-direction: column;
+    margin: 100px 0px 50px 0px;
 }
 .cart-sum {
-    margin-bottom: 100px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    justify-content: center;
+    background: rgb(8, 177, 120);
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+
     &__total {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        padding: 10px;
-        justify-content: center;
-        background: rgb(8, 177, 120);
-        color: rgb(255, 255, 255);
-        font-size: 22px;
+        margin-right: 10px;
     }
+}
+.product-catalog-in__cart {
+
+
+    p {
+        margin-top: 70px;
+        font-family: 'Lucida Sans Unicode';
+        font-size: 2rem;
+    }
+}
+
+.cart-empty {
+    font-family: 'Lucida Sans Unicode';
+    font-size: 2rem;
 }
 </style>
