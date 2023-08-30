@@ -1,7 +1,9 @@
 <template>
     <router-link :to="{name: 'cart'}">
         <div class="product-catalog-in__cart">
-            <span>{{ CART_ARR.length }}</span>
+            <span v-show="CART_ARR.length >= 1">
+                {{ CART_ARR.length }}
+            </span>
         </div>
     </router-link>
     <div class="product-catalog">
@@ -151,7 +153,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .product-catalog {
         position: absolute;
         max-width: 1000px;
@@ -168,18 +170,23 @@ export default {
     }
 
     .product-catalog-in__cart {
-        position: absolute;
+        position: fixed;
         width: 60px;
         height: 60px;
-        top: 80px;
+        top: 30px;
         right: 125px;
         padding: 10px;
         background-image: url(@/assets/svg/cart.svg);
         background-repeat: no-repeat;
+        z-index: 5;
 
         span {
-            margin-left: 60px;
-            font-size: 40px;
+            display: inline-block;
+            margin-left: 9px;
+            margin-top: 26px;
+            font-size: 20px;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
         }
     }
 </style>

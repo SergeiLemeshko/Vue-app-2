@@ -1,16 +1,20 @@
 <template>
     <div class="app">
+        <nav-block/>
         <my-main/>
     </div>
 </template>
 
 <script>
 import MyMain from './views/MyMain.vue';
+import NavBlock from "@/components/NavBlock.vue"
+
 
 export default {
     name: "app",
     components: {
-        MyMain
+        MyMain,
+        NavBlock
     }
 }
 

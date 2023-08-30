@@ -14,7 +14,7 @@ const routes = [
 		name: 'cart',
 		component: Cart
 	},
-  {
+	{
 		path: '/reviews',
 		name: 'reviews',
 		component: ReviewsCatalog
@@ -22,8 +22,8 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+	history: createWebHistory(process.env.BASE_URL),
+	routes
 })
 
 export default router;

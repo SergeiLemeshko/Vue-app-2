@@ -17,7 +17,7 @@
             @increment="increment(index)"
             @decrement="decrement(index)"
         />
-        <div class="cart-sum">
+        <div class="cart-sum" v-show="totalCartSum >= 1">
             <p class="cart-sum__total">Итого:</p>
             <p>{{ totalCartSum }} рублей</p>
         </div>
@@ -80,7 +80,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cart {
     display: flex;
     flex-direction: column;
@@ -103,7 +103,7 @@ export default {
     }
 }
 .product-catalog-in__cart {
-
+    
 
     p {
         margin-top: 70px;
