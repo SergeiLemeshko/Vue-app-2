@@ -1,5 +1,8 @@
 <template>
     <div class="reviews-catalog">
+        <review-form v-model:showForm="isFormVisible">
+            <h1>FORM</h1>
+        </review-form>
         <h1>ReviewsCatalog</h1>
         <div class="reviews-catalog__list">
             <reviews-item
@@ -8,24 +11,29 @@
                 :review="item"
             />
         </div>
-        <btn-reviews>Добавить отзыв</btn-reviews>
+        <btn-reviews
+            @click="showForm">
+            Добавить отзыв
+        </btn-reviews>
     </div>
 </template>
 
 <script>
 import BtnReviews from "@/components/UI/BtnReviews.vue"
 import ReviewsItem from "@/components/reviews/ReviewsItem.vue"
+import ReviewForm from "@/components/reviews/ReviewForm.vue"
 import { mapGetters, mapActions} from "vuex"
 
 export default {
     name: "reviews-catalog",
     components: {
         ReviewsItem,
-        BtnReviews
+        BtnReviews,
+        ReviewForm
     },
     data() {
         return {
-            
+            isFormVisible: false,
         }
     },
     computed: {
@@ -36,7 +44,10 @@ export default {
     methods: {
         ...mapActions({
 			GET_REVIEWS: 'review/GET_REVIEWS',			
-		})
+		}),
+        showForm() {
+            this.isFormVisible = true;
+        }
     },
     mounted() {
         this.GET_REVIEWS()
@@ -47,7 +58,7 @@ export default {
 <style lang="scss">
     .reviews-catalog {
         position: absolute;
-        top: 800px;
+        top: 200px;
         max-width: 1000px;
     }
 
