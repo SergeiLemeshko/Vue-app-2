@@ -21,7 +21,6 @@ export const reviewModule = {
             })
             .then((reviews) => {
                 commit("SET_REVIEWS", reviews.data);
-                console.log(reviews.data)
                 return reviews;
             })
             .catch((error) => {

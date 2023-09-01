@@ -1,14 +1,34 @@
 <template>
-    <form class="review-form" v-if="showForm" @click.stop="hideForm">
+    <form 
+        class="review-form" 
+        v-if="showForm" 
+        @click.stop="hideForm" 
+        @submit.prevent="onSubmit">
         <div @click.stop class="review-form__content">
-            <slot></slot>
+            <p>
+                <label for="review">Review:</label>
+                <textarea id="review" v-model="review"></textarea>
+            </p>
+            <btn-reviews>
+                Оставить отзыв
+            </btn-reviews>
         </div>
     </form>
 </template>
 
 <script>
+import BtnReviews from "@/components/UI/BtnReviews.vue"
+
 export default {
     name: "review-form",
+    components: {
+        BtnReviews
+    },
+    data() {
+        return {
+            review: null
+        }
+    },
     props: {
         showForm: {
             type: Boolean,
@@ -16,8 +36,16 @@ export default {
         }
     },
     methods: {
+        //Скрытие формы по клику вне формы
         hideForm() {
             this.$emit("update:showForm", false)
+        },
+        onSubmit() {
+            let wareReview = {
+                review: this.review,
+            }
+            this.$emit('sendSubmitted', wareReview)
+            this.review = null
         }
     }
 }

@@ -1,9 +1,12 @@
 <template>
     <div class="reviews-catalog">
-        <review-form v-model:showForm="isFormVisible">
-            <h1>FORM</h1>
+        <review-form 
+            v-model:showForm="isFormVisible"
+            @sendSubmitted="addReview">
         </review-form>
-        <h1>ReviewsCatalog</h1>
+        <li v-for="review in reviews">
+            <p class="reviews-item">{{ review.review }}</p>
+        </li>
         <div class="reviews-catalog__list">
             <reviews-item
                 v-for="item in REVIEWS"
@@ -33,7 +36,8 @@ export default {
     },
     data() {
         return {
-            isFormVisible: false,
+            isFormVisible: false,//Скрытие/показ формы отзыва
+            reviews: [],
         }
     },
     computed: {
@@ -45,8 +49,13 @@ export default {
         ...mapActions({
 			GET_REVIEWS: 'review/GET_REVIEWS',			
 		}),
+        //Показ формы
         showForm() {
             this.isFormVisible = true;
+        },
+        //Добавляем отзыв
+        addReview(wareReview) {
+            this.reviews.push(wareReview)
         }
     },
     mounted() {
