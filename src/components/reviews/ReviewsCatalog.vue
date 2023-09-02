@@ -56,6 +56,7 @@ export default {
         //Добавляем отзыв
         addReview(wareReview) {
             this.reviews.push(wareReview)
+            this.isFormVisible = false; //Закрываем форму при клике на кнопку Оставить отзыв
         }
     },
     mounted() {

@@ -3,7 +3,6 @@
 		<!--кнопки навбара -->
         <section class="nav-btn">
             <div @click="$router.push('/')"><span>Главная</span></div>
-            <div @click="$router.push('/form')"><span>Регистрация</span></div>
             <div @click="$router.push('/reviews')"><span>Отзывы</span></div>
         </section>
 	</div>

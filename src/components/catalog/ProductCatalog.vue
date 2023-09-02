@@ -7,6 +7,9 @@
         </div>
     </router-link>
     <div class="product-catalog">
+        <slider-list
+            :interval="3000"
+        />
         <input v-model="searchWare"/>
         <div class="product-catalog__list">
             <product-item
@@ -21,6 +24,7 @@
 
 <script>
 import ProductItem from "@/components/catalog/ProductItem.vue"
+import SliderList from '@/components/slider/SliderList.vue';
 import { mapGetters, mapActions} from "vuex"
 
 
@@ -28,6 +32,7 @@ export default {
     name: "product-catalog",
     components: {
         ProductItem,
+        SliderList
     },
     data() {
         return {
