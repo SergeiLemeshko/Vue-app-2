@@ -103,8 +103,6 @@ export default {
     }
 }
 .product-catalog-in__cart {
-    
-
     p {
         margin-top: 70px;
         font-family: 'Lucida Sans Unicode';

@@ -20,7 +20,7 @@ export default {
 <style lang="scss">
     .main {
         display: flex;
-        max-width: 1000px;
+        width: 100vw;
         align-items: center;
         justify-content: center;
         margin: 0 auto;

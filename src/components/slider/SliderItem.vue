@@ -1,7 +1,6 @@
 <template>
     <div class="slider-item">
         <img :src="require('@/assets/slider/' + SliderItem.img)" alt="img_slider">
-        <p>{{ SliderItem.name }}</p>
     </div>
 </template>
 
@@ -19,12 +18,18 @@ export default {
 
 <style lang="scss" scoped>
 .slider-item {
-    width: 700px;
+    width: 100vw;
+    height: 270px;
+    margin: 0 auto;
 
     & p {
         padding-top: 25px;
         text-align: justify;
         text-indent: 30px;
+    }
+
+    & img {
+        width: 100vw;
     }
 }
 </style>

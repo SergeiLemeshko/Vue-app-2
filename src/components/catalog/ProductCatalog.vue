@@ -1,15 +1,17 @@
 <template>
+    <slider-list
+        :interval="7000" 
+    />
     <router-link :to="{name: 'cart'}">
         <div class="product-catalog-in__cart">
-            <span v-show="CART_ARR.length >= 1">
+            <span 
+                v-show="CART_ARR.length >= 1" 
+                ref="cartlength">
                 {{ CART_ARR.length }}
             </span>
         </div>
     </router-link>
     <div class="product-catalog">
-        <slider-list
-            :interval="3000"
-        />
         <input v-model="searchWare"/>
         <div class="product-catalog__list">
             <product-item
@@ -36,6 +38,7 @@ export default {
     },
     data() {
         return {
+            // массив обуви
             ware: [
                 {
                     name: "Туфли мужские BNAW23-50",
@@ -153,45 +156,54 @@ export default {
         searchProducts() {
             let productList = this.ware;
             return productList.filter(item => item.name.includes(this.searchWare))
+        },
+        // Смещение двузначного числа на корзине
+        leftCartLength() {
+            if(this.$refs.cartlength.innerText >= 3){
+                return this.$refs.cartlength.classList.add("span-left")
+            }
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-    .product-catalog {
-        position: absolute;
-        max-width: 1000px;
-        top: 100px;
+.product-catalog {
+    position: absolute;
+    max-width: 1000px;
+    top: 700px;
+}
+
+.product-catalog__list {
+    display: grid;
+    grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.product-catalog-in__cart {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    right: 30px;
+    background-image: url(@/assets/svg/cart.svg);
+    background-repeat: no-repeat;
+    z-index: 5;
+
+    span {
+        display: inline-block;
+        margin-left: 19px;
+        margin-top: 23px;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgb(0, 0, 0);
     }
 
-    .product-catalog__list {
-        display: grid;
-        grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
-        gap: 90px;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 50px;
+    .span-left {
+        margin-left: 16px;
     }
-
-    .product-catalog-in__cart {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        top: 30px;
-        right: 125px;
-        padding: 10px;
-        background-image: url(@/assets/svg/cart.svg);
-        background-repeat: no-repeat;
-        z-index: 5;
-
-        span {
-            display: inline-block;
-            margin-left: 9px;
-            margin-top: 26px;
-            font-size: 20px;
-            font-weight: 500;
-            color: rgb(255, 255, 255);
-        }
-    }
+}
 </style>

@@ -53,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper-slider {
-    max-width: 700px;
+    width: 100vw;
     overflow: hidden;
     margin: 0 auto;
 }
@@ -62,5 +62,6 @@ export default {
     margin-top: 180px;
     display: flex;
     transition: all ease .5s;
+    overflow: hidden;
 }
 </style>
