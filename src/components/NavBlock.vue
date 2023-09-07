@@ -5,8 +5,8 @@
 	<section class="nav nav-fixed">
 		<!--кнопки навбара -->
         <div class="nav-btn">
-            <div @click="$router.push('/')"><span>PREMITA</span></div>
-            <div @click="$router.push('/reviews')"><span>Отзывы</span></div>
+            <div @click="$router.push('/')"><span class="nav-btn__logo">PREMITA</span></div>
+            <div @click="$router.push('/reviews')"><span class="nav-btn__review">Reviews</span></div>
         </div>
 	</section>
 </template>
@@ -29,9 +29,6 @@ export default {
 	margin: 0 auto;
 	justify-content: flex-start;
 	border-bottom: 1px solid #d4e7e0;
-	-webkit-box-shadow: 0px 10px 30px -13px rgba(34, 60, 80, 0.41);
-	-moz-box-shadow: 0px 10px 30px -13px rgba(34, 60, 80, 0.41);
-	box-shadow: 0px 10px 30px -13px rgba(34, 60, 80, 0.41);
 }
 
 .nav-btn {
@@ -57,9 +54,27 @@ export default {
 	width: 100%;
 	align-items: center;
 	justify-content: center;
-	background: rgb(236, 236, 226);
+	background: rgb(241, 242, 243);
 	height: 40px;
 	text-transform: uppercase;
 	font-size: 14px;
+}
+
+.nav-btn__logo {
+	display: inline-block;
+	margin: 0px 0px 16px 30px;
+	font-family: Tahoma;
+	font-size: 1.8rem;
+	font-weight: 600;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+
+.nav-btn__review {
+	display: inline-block;
+	margin: 0px 0px 17px 60px;
+	font-family: Verdana;
+	font-size: 1.3rem;
+	cursor: pointer;
 }
 </style>

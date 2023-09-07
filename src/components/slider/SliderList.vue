@@ -59,7 +59,7 @@ export default {
 }
 
 .slider-list {
-    margin-top: 180px;
+    margin-top: 111px;
     display: flex;
     transition: all ease .5s;
     overflow: hidden;

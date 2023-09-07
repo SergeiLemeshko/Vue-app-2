@@ -10,10 +10,7 @@
 <script>
 
 export default {
-    name: "my-main",
-    computed: {
-
-    }
+    name: "my-main"
 }
 </script>
 

@@ -37,7 +37,7 @@ export default {
     .product-item {
         box-shadow: 0 0 6px 0;
         padding: 10px;
-        width: 250px;
+        width: 650px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -55,5 +55,4 @@ export default {
         margin-bottom: 25px;
         text-align: center;
     }
-
 </style>

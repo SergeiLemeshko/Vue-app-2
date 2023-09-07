@@ -12,7 +12,15 @@
         </div>
     </router-link>
     <div class="product-catalog">
-        <input v-model="searchWare"/>
+        <div class="product-catalog__search">
+            <input 
+                type="text"
+                class="product-catalog__input"
+                v-model="searchWare"
+                placeholder="Search..."
+                autofocus
+            />
+        </div>
         <div class="product-catalog__list">
             <product-item
             v-for="item in searchProducts"
@@ -28,7 +36,6 @@
 import ProductItem from "@/components/catalog/ProductItem.vue"
 import SliderList from '@/components/slider/SliderList.vue';
 import { mapGetters, mapActions} from "vuex"
-
 
 export default {
     name: "product-catalog",
@@ -170,8 +177,9 @@ export default {
 <style lang="scss" scoped>
 .product-catalog {
     position: absolute;
-    max-width: 1000px;
-    top: 700px;
+    top: 450px;
+    margin: 0 auto;
+    // width: 1500px;
 }
 
 .product-catalog__list {
@@ -201,9 +209,25 @@ export default {
         font-weight: 500;
         color: rgb(0, 0, 0);
     }
-
     .span-left {
         margin-left: 16px;
     }
+}
+.product-catalog__input {
+    width: 300px;
+	font-size: 18px;
+	padding: 10px 0px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 5px;
+    margin-bottom: 60px;
+}
+.product-catalog__input::placeholder {
+    padding-left: 30px;
+    color: #c9c8c8;;
+}
+.product-catalog__search {
+    display: flex;
+    justify-content: end;
 }
 </style>
