@@ -7,7 +7,7 @@
             alt="image"
         > 
         <p class="product-item__name">{{ item_ware.name }}</p>
-        <p class="product-item__price">Цена: {{ item_ware.price }} р.</p>
+        <p class="product-item__price">Цена: {{ item_ware.price }}</p>
         <btn-product @click="addInCart">В корзину</btn-product>
     </div>
 </template>
@@ -34,25 +34,27 @@ export default {
 </script>
 
 <style lang="scss">
+    $font-family: 'Lucida Sans Unicode';
+
     .product-item {
-        box-shadow: 0 0 6px 0;
-        padding: 10px;
-        width: 650px;
+        border: 1px solid #e9e7e7;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         &__img {
-            display: block;
-            width: 200px;
+            width: 350px;
         }
     }
     .product-item__name {
         margin-bottom: 15px;
         text-align: center;
+        font-weight: 600;
+        font-family: $font-family;
     }
     .product-item__price {
         margin-bottom: 25px;
         text-align: center;
+        font-family: $font-family;
     }
 </style>

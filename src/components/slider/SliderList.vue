@@ -60,6 +60,7 @@ export default {
 
 .slider-list {
     margin-top: 111px;
+    margin-bottom: 70px;
     display: flex;
     transition: all ease .5s;
     overflow: hidden;

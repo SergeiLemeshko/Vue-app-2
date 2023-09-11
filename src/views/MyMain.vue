@@ -14,12 +14,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .main {
-        display: flex;
-        width: 100vw;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
+
     }
 </style>
