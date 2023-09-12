@@ -34,6 +34,7 @@ $font-family: 'Lucida Sans Unicode';
     &:hover {
         background: darken(#4b4b4b, 7%);
         color: #f5eeee;
+        transition: ease-in-out 0.3s;
     }
 }
 </style>

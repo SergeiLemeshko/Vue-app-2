@@ -152,7 +152,9 @@ export default {
             "ADD_IN_CART": 'cart/ADD_IN_CART',
     }),
         addInCart(data) {
-            this.ADD_IN_CART(data)
+            this.ADD_IN_CART(data);
+            // Смещение двузначного числа на корзине
+            this.CART_ARR.length >= 10 ? this.$refs.cartlength.classList.add("span-left") : null;
         },
     },
     computed: {
@@ -164,21 +166,16 @@ export default {
             let productList = this.ware;
             return productList.filter(item => item.name.includes(this.searchWare))
         },
-        // Смещение двузначного числа на корзине
-        leftCartLength() {
-            if(this.$refs.cartlength.innerText >= 3){
-                return this.$refs.cartlength.classList.add("span-left")
-            }
-        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+$font-family: 'Lucida Sans Unicode';
 .product-catalog {
     margin: 0 auto;
     max-width: 2200px;
-    padding: 0px 30px;
+    padding: 0px 30px 30px 30px;
 }
 
 .product-catalog__list {
@@ -203,11 +200,12 @@ export default {
         margin-left: 19px;
         margin-top: 23px;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 600;
+        font-family: $font-family;
         color: rgb(0, 0, 0);
     }
     .span-left {
-        margin-left: 16px;
+        margin-left: 15px;
     }
 }
 .product-catalog__input {

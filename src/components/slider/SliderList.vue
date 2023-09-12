@@ -64,5 +64,6 @@ export default {
     display: flex;
     transition: all ease .5s;
     overflow: hidden;
+    transition: all 1.2s ease-in-out;
 }
 </style>

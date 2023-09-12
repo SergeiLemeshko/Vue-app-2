@@ -2,7 +2,7 @@
     <div class="cart">
         <router-link :to="{name: 'catalog'}">
             <div class="product-catalog-in__cart">
-                <p>Назад</p>
+                <button>Back</button>
             </div>
         </router-link>
             <p class="cart-empty" 
@@ -103,10 +103,10 @@ export default {
     }
 }
 .product-catalog-in__cart {
-    p {
+    & button {
         margin-top: 70px;
         font-family: 'Lucida Sans Unicode';
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 }
 
