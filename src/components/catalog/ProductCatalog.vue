@@ -3,7 +3,7 @@
         :interval="7000" 
     />
     <router-link :to="{name: 'cart'}">
-        <div class="product-catalog-in__cart">
+        <div class="product-catalog__cart">
             <span 
                 v-show="CART_ARR.length >= 1" 
                 ref="cartlength">
@@ -185,7 +185,7 @@ $font-family: 'Lucida Sans Unicode';
     grid-gap: 10px;
 }
 
-.product-catalog-in__cart {
+.product-catalog__cart {
     position: fixed;
     width: 50px;
     height: 50px;
@@ -198,7 +198,7 @@ $font-family: 'Lucida Sans Unicode';
     span {
         display: inline-block;
         margin-left: 19px;
-        margin-top: 23px;
+        margin-top: 21px;
         font-size: 14px;
         font-weight: 600;
         font-family: $font-family;

@@ -2,12 +2,12 @@
     <div class="cart">
         <router-link :to="{name: 'catalog'}">
             <div class="product-catalog-in__cart">
-                <button>Back</button>
+                <!-- <button>Back</button> -->
             </div>
         </router-link>
             <p class="cart-empty" 
                 v-if="!CART_ARR.length">
-                Корзина пустая
+                <span>Your cart is empty</span>
             </p>
         <cart-item
             v-for="(elem, index) in CART_ARR"
@@ -18,8 +18,17 @@
             @decrement="decrement(index)"
         />
         <div class="cart-sum" v-show="totalCartSum >= 1">
-            <p class="cart-sum__total">Итого:</p>
-            <p>{{ totalCartSum }} рублей</p>
+            <p>Order summary</p>
+            <p>Shipping calculated at checkout</p>
+            <div class="line"></div>
+            <div class="line line-2"></div>
+            <div class="cart-sum__total">
+                <p>
+                    Total:
+                    {{ totalCartSum }}
+                    <span>€</span>
+                </p>
+            </div>
         </div>
     </div>
 </template>
@@ -84,34 +93,57 @@ export default {
 .cart {
     display: flex;
     flex-direction: column;
-    margin: 100px 0px 50px 0px;
+    margin: 200px 0px 50px 0px;
 }
 .cart-sum {
     display: flex;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 10px;
-    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    width: 500px;
+    height: 700px;
+    top: 30px;
+    right: 280px;
+    padding: 50px 10px;
+    align-items: center;
     background: rgb(8, 177, 120);
     color: rgb(255, 255, 255);
     font-size: 22px;
+}
 
-    &__total {
-        margin-right: 10px;
-    }
+.cart-sum__total {
+    display: flex;
 }
 .product-catalog-in__cart {
-    & button {
-        margin-top: 70px;
-        font-family: 'Lucida Sans Unicode';
-        font-size: 1.2rem;
-    }
+    position: fixed;
+    width: 50px;
+    height: 20px;
+    top: 150px;
+    left: 45px;
+    background-image: url(@/assets/svg/arrow.svg);
+    background-repeat: no-repeat;
+    animation:animationArrow 2.5s infinite ease-out;
 }
-
+/*Анимация стрелки в корзине */
+@keyframes animationArrow {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
 .cart-empty {
+    display: block;
+    margin: 0 auto;
+    margin-top: 200px;
+    top: 400px;
     font-family: 'Lucida Sans Unicode';
     font-size: 2rem;
+    text-transform: uppercase;
 }
+.line {
+    width: 400px;
+    border-bottom: 2px solid #f00;
+}
+.line-2 {
+    margin-top: 40px;
+}
+
 </style>

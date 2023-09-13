@@ -7,11 +7,11 @@
         >
         <div class="cart-item__info">
             <p class="cart-item__info-name">{{ cart_item_info.name }}</p>
-            <p class="cart-item__info-price">Цена:{{ cart_item_info.price }}</p>
+            <p class="cart-item__info-price">Price: {{ cart_item_info.price }}</p>
         </div>
         <div 
             class="cart-item__sum">
-            <p>Кол-во:</p>
+            <p>Quantity</p>
             <span>
                 <span class="sum__minus" @click="decrElem">-</span>
                     {{ cart_item_info.sum }}
@@ -61,23 +61,24 @@ export default {
 $font-family: 'Lucida Sans Unicode';
 
 .cart-item {
-    width: 350px;
-    height: 360px;
-    border: 1px solid #e9e7e7;
+    width: 960px;
+    height: 300px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-left: 350px;
+    justify-content: center;
+    margin-left: 330px;
     margin-bottom: 20px;
 
     &__img {
+        margin-right: 30px;
         object-fit: cover;
-        width: 150px;
-        height: 150px;
+        width: 250px;
+        height: 250px;
+        border: 1px solid #e9e7e7;
+
     }
 }
 .cart-item__info-name {
-    margin-top: 15px;
     margin-bottom: 15px;
     text-align: center;
     font-weight: 600;
@@ -89,11 +90,15 @@ $font-family: 'Lucida Sans Unicode';
     font-family: $font-family;
 }
 .cart-item__info {
-
+    margin-top: -3px;
+    width: 150px;
 }
-
 .cart-item__sum {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: -13px 50px 0px 100px;
 
     & p {
         font-family: $font-family;
@@ -101,10 +106,10 @@ $font-family: 'Lucida Sans Unicode';
 
     & span {
         font-family: $font-family;
+        margin-top: 15px;
     }
 }
-
-.sum__minus, .sum__plus {
+.sum__minus, .sum__plus  {
     cursor: pointer;
 }
 /* Увеличиваю изображение при наведении */
