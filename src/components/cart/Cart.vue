@@ -29,6 +29,51 @@
                     <span>€</span>
                 </p>
             </div>
+            <div class="btn-checkout">
+                <button type="submit" name="checkout">
+                    <span class="btn-checkout__text">proceed to checkout</span>
+                </button>
+            </div>
+            <div class="shop-pay" role="button">
+                <span class="shop-pay__link">shop</span>
+                <span class="shop-pay__right">Pay</span>
+            </div>
+            <div class="pay-pal" role="button">
+                <span class="pay-pal__link"></span>
+                <span class="pay-pal__right"></span>
+            </div>
+            <div class="g-pay__link" role="button">
+                <span class="g-pay__link"></span>
+                <span class="g-pay__right">Pay</span>
+            </div>
+            <div class="payment-icons">
+                <span class="payment-icons__title">Secure payment</span>
+                    <div class="payment-icons__root">
+                        <ul class="payment-icons__list">
+                            <li class="payment-icons__item">
+                                <img src="@/assets/svg/pay/pay-1.svg" alt="img_payment"/>
+                            </li>
+                            <li class="payment-icons__item">
+                                <img src="@/assets/svg/pay/pay-2.svg">
+                            </li>
+                            <li class="payment-icons__item">
+                                <img src="@/assets/svg/pay/pay-3.svg">
+                            </li>
+                            <li class="payment-icons__item">
+                                <img src="@/assets/svg/pay/pay-4.svg">
+                            </li>
+                            <li class="payment-icons__item">
+                                <img src="@/assets/svg/pay/pay-5.svg">
+                            </li>
+                            <li class="payment-icons__item">
+                                <img src="@/assets/svg/pay/pay-6.svg">
+                            </li>
+                            <li class="payment-icons__item">
+                                <img src="@/assets/svg/pay/pay-7.svg">
+                            </li>
+                        </ul>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -105,11 +150,10 @@ export default {
     right: 280px;
     padding: 50px 10px;
     align-items: center;
-    background: rgb(8, 177, 120);
-    color: rgb(255, 255, 255);
+    background: rgb(241, 242, 243);
+    color: rgb(5, 5, 5);
     font-size: 22px;
 }
-
 .cart-sum__total {
     display: flex;
 }
@@ -145,5 +189,103 @@ export default {
 .line-2 {
     margin-top: 40px;
 }
+.btn-checkout {
+    & button {
+        width: 100%;
+        width: 380px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        border-radius: 2px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+.btn-checkout__text {
 
+}
+.shop-pay {
+    background: #5a31f4;
+    width: 100%;
+    width: 380px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.shop-pay__link {
+}
+.shop-pay__right {
+
+}
+
+.pay-pal {
+    background: #ffc439;
+    width: 100%;
+    width: 380px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pay-pal__link {
+
+}
+.pay-pal__right {
+
+}
+.g-pay {
+
+}
+.g-pay__link {
+
+}
+.g-pay__right {
+    background: #000000;
+    width: 100%;
+    width: 380px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.payment-icons {
+}
+.payment-icons__title {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+}
+.payment-icons__root {
+    margin: 0;
+}
+.payment-icons__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.payment-icons__item {
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+    width: 40px;
+}
 </style>
