@@ -1,25 +1,23 @@
 <template>
     <div class="cart">
         <router-link :to="{name: 'catalog'}">
-            <div class="product-catalog-in__cart">
-                <!-- <button>Back</button> -->
-            </div>
+            <div class="product-catalog-in__cart"></div>
         </router-link>
             <p class="cart-empty" 
                 v-if="!CART_ARR.length">
                 <span>Your cart is empty</span>
             </p>
-        <cart-item
-            v-for="(elem, index) in CART_ARR"
-            :key="elem.id"
-            :cart_item_info="elem"
-            @deleteWareFromCart="deleteWareFromCart(index)"
-            @increment="increment(index)"
-            @decrement="decrement(index)"
-        />
+            <cart-item
+                v-for="(elem, index) in CART_ARR"
+                :key="elem.id"
+                :cart_item_info="elem"
+                @deleteWareFromCart="deleteWareFromCart(index)"
+                @increment="increment(index)"
+                @decrement="decrement(index)"
+            />
         <div class="cart-sum" v-show="totalCartSum >= 1">
-            <p>Order summary</p>
-            <p>Shipping calculated at checkout</p>
+            <p class="cart-sum__order">Order summary</p>
+            <p class="cart-sum__calculate">Shipping calculated at checkout</p>
             <div class="line"></div>
             <div class="line line-2"></div>
             <div class="cart-sum__total">
@@ -31,7 +29,7 @@
             </div>
             <div class="btn-checkout">
                 <button type="submit" name="checkout">
-                    <span class="btn-checkout__text">proceed to checkout</span>
+                    <span>proceed to checkout</span>
                 </button>
             </div>
             <div class="shop-pay" role="button">
@@ -39,11 +37,11 @@
                 <span class="shop-pay__right">Pay</span>
             </div>
             <div class="pay-pal" role="button">
-                <span class="pay-pal__link"></span>
-                <span class="pay-pal__right"></span>
+                <img class="pay-pal__link" src="@/assets/svg/paypal.svg">
+                <img src="@/assets/svg/paypal-text.svg">
             </div>
-            <div class="g-pay__link" role="button">
-                <span class="g-pay__link"></span>
+            <div class="g-pay" role="button">
+                <img src="@/assets/svg/icon-google.svg">
                 <span class="g-pay__right">Pay</span>
             </div>
             <div class="payment-icons">
@@ -67,9 +65,6 @@
                             </li>
                             <li class="payment-icons__item">
                                 <img src="@/assets/svg/pay/pay-6.svg">
-                            </li>
-                            <li class="payment-icons__item">
-                                <img src="@/assets/svg/pay/pay-7.svg">
                             </li>
                         </ul>
                 </div>
@@ -144,18 +139,26 @@ export default {
     display: flex;
     flex-direction: column;
     position: absolute;
-    width: 500px;
-    height: 700px;
+    margin-top: 30px;
+    margin-left: 850px;
+    min-width: 500px;
+    height: 790px;
     top: 30px;
     right: 280px;
-    padding: 50px 10px;
-    align-items: center;
+    padding: 50px 50px;
     background: rgb(241, 242, 243);
     color: rgb(5, 5, 5);
     font-size: 22px;
 }
 .cart-sum__total {
     display: flex;
+    margin-bottom: 35px;
+
+    & p {
+        font-family: 'Lucida Sans Unicode';
+        font-size: 24px;
+        font-weight: 700;
+    }
 }
 .product-catalog-in__cart {
     position: fixed;
@@ -183,16 +186,18 @@ export default {
     text-transform: uppercase;
 }
 .line {
-    width: 400px;
-    border-bottom: 2px solid #f00;
+    width: 100%;
+    border-bottom: 1px solid rgb(27, 27, 27);
+    margin-bottom: 55px;
 }
 .line-2 {
-    margin-top: 40px;
+    margin-bottom: 25px;
 }
 .btn-checkout {
+    margin-bottom: 22px;
+
     & button {
         width: 100%;
-        width: 380px;
         height: 50px;
         display: flex;
         justify-content: center;
@@ -205,72 +210,89 @@ export default {
         font-size: 15px;
         cursor: pointer;
     }
-}
-.btn-checkout__text {
 
+    & span {
+        font-family: 'Lucida Sans Unicode';
+        font-size: 1rem;
+    }
 }
 .shop-pay {
     background: #5a31f4;
     width: 100%;
-    width: 380px;
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 22px;
+
+    &:hover {
+        background: darken(#1522db, 7%);
+        transition: ease-in-out 0.1s;
+    }
 }
 .shop-pay__link {
+    font-size: 1.6rem;
 }
 .shop-pay__right {
-
+    display: inline-block;
+    background: #ffffff;
+    color: #5a31f4;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: 'Lucida Sans Unicode';
+    font-weight: 600;
+    margin-left: 4px;
 }
-
 .pay-pal {
     background: #ffc439;
     width: 100%;
-    width: 380px;
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 22px;
+
+    &:hover {
+        background: darken(#ffc439, 7%);
+        transition: ease-in-out 0.1s;
+    }
 }
 .pay-pal__link {
-
-}
-.pay-pal__right {
-
+    margin-right: 7px;
 }
 .g-pay {
-
-}
-.g-pay__link {
-
-}
-.g-pay__right {
-    background: #000000;
+    background: #020202;
     width: 100%;
-    width: 380px;
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 42px;
 }
-.payment-icons {
+.g-pay__right {
+    margin-left: 5px;
 }
 .payment-icons__title {
     display: block;
-    font-size: 16px;
+    font-size: 22px;
     line-height: 24px;
     letter-spacing: 0;
-    margin-bottom: 10px;
+    color: #5f5f5f;
+    font-family: 'Lucida Sans Unicode';
+    margin-bottom: 15px;
 }
 .payment-icons__root {
     margin: 0;
@@ -285,7 +307,18 @@ export default {
 .payment-icons__item {
     display: inline-block;
     line-height: 1;
-    margin: 0;
-    width: 40px;
+    margin-right: 5px;
+    width: 50px;
+}
+.cart-sum__order {
+    font-family: 'Lucida Sans Unicode';
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.cart-sum__calculate {
+    font-family: 'Lucida Sans Unicode';
+    font-size: 18px;
+    margin-bottom: 25px;
 }
 </style>
