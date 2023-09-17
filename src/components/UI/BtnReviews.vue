@@ -14,20 +14,25 @@ export default {
 
 <style lang="scss">
 .btn-reviews {
-    width: 90px;
-    height: 35px;
+    width: 170px;
+    height: 50px;
     padding: 6px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
-    background: #5c3048ad;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.5);
     text-decoration: none;
-    color: white;
-    font-size: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
     text-transform: uppercase;
     transition: background-color .3s ease;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: 'Lucida Sans Unicode';
+    letter-spacing: 0.1rem;
 
     &:hover {
-        background: darken(#7c2441, 7%);
+        background: darken(#4b4b4b, 7%);
+        color: #f5eeee;
+        transition: ease-in-out 0.3s;
     }
 }
 </style>
