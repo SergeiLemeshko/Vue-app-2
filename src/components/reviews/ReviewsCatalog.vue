@@ -11,8 +11,8 @@
                 :key="id"
                 :review="item"
             />
-            <div class="reviews-item__individual" v-for="review in reviews">
-                <p class="reviews-item__id">Review №: {{ REVIEWS.length + 1 }}</p>
+            <div class="reviews-item__individual" v-for="review, index in reviews">
+                <p class="reviews-item__id">Review №: {{ `${index + this.numAddReview}` }}</p>
                 <p class="reviews-item__title">Text: {{ review.review }}</p>
             </div>
         </div>
@@ -40,8 +40,9 @@ export default {
     },
     data() {
         return {
-            isFormVisible: false,//Скрытие/показ формы отзыва
+            isFormVisible: false, //Скрытие/показ формы отзыва
             reviews: [],
+            numAddReview: 21, //Для рассчета порядкового номера добавляемого отзыва
         }
     },
     computed: {
@@ -59,12 +60,13 @@ export default {
         },
         //Добавляем отзыв
         addReview(wareReview) {
-            this.reviews.push(wareReview)
+            this.reviews.push(wareReview);
             this.isFormVisible = false; //Закрываем форму при клике на кнопку Оставить отзыв
+            return;
         }
     },
     mounted() {
-        this.GET_REVIEWS()
+        this.GET_REVIEWS();
     }
 }
 </script>
