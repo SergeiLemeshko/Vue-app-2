@@ -2,18 +2,21 @@
     <div class="app">
         <nav-block/>
         <my-main/>
+        <my-footer/>
     </div>
 </template>
 
 <script>
 import MyMain from './views/MyMain.vue';
 import NavBlock from "@/components/NavBlock.vue";
+import MyFooter from "@/components/footer/MyFooter.vue"
 
 export default {
     name: "app",
     components: {
         MyMain,
-        NavBlock
+        NavBlock,
+        MyFooter
     }
 }
 </script>

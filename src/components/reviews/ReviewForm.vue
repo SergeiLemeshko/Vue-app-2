@@ -5,13 +5,17 @@
         @click.stop="hideForm" 
         @submit.prevent="onSubmit">
         <div @click.stop class="review-form__content">
+            <div class="review-form__excess">
+                <p v-show="isVisible">
+                    The text must not exceed 100 characters!
+                </p>
+            </div>
             <p>
                 <label for="review"></label>
                 <textarea 
                     id="review" 
                     placeholder="Your feedback..." 
-                    v-model="review"
-                    ref="textareaE">
+                    v-model="review">
                 </textarea>
             </p>
             <div class="review-form__btn">
@@ -33,7 +37,8 @@ export default {
     },
     data() {
         return {
-            review: null
+            review: null,
+            isVisible: false
         }
     },
     props: {
@@ -52,8 +57,13 @@ export default {
             let wareReview = {
                 review: this.review,
             }
-            this.$emit('sendSubmitted', wareReview);
-            this.review = null;
+            if(this.review.length <= 70 ) {
+                this.$emit('sendSubmitted', wareReview);
+                this.review = null;
+                this.isVisible = false;
+            } else if(this.review.length >= 70) {
+                this.isVisible = true;
+            }
         }
     }
 }
@@ -91,6 +101,15 @@ export default {
             margin: 40px 0px 30px 0px;
         }
     }
+}
+.review-form__excess {
+    display: block;
+    height: 30px;
+    text-align: center;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 18px;
+    padding-top: 20px;
+    color: rgb(221, 56, 27);
 }
 textarea {
     resize: none;

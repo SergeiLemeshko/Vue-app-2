@@ -134,6 +134,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin: 200px 0px 50px 0px;
+    min-height: 800px;
 }
 .cart-sum {
     display: flex;
@@ -180,7 +181,6 @@ export default {
     display: block;
     margin: 0 auto;
     margin-top: 200px;
-    top: 400px;
     font-family: 'Lucida Sans Unicode';
     font-size: 2rem;
     text-transform: uppercase;

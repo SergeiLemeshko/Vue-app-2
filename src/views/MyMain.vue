@@ -1,21 +1,17 @@
 <template>
-    <div class="main">
+    <main class="main">
         <!--для сохранения состояния при изменении URL-->
         <keep-alive> 
             <router-view></router-view>
         </keep-alive>
-    </div>
+    </main>
 </template>
 
 <script>
-
 export default {
     name: "my-main"
 }
 </script>
 
-<style lang="scss" scoped>
-    .main {
-
-    }
+<style lang="scss">
 </style>
