@@ -66,4 +66,9 @@ export default {
     overflow: hidden;
     transition: all 1.2s ease-in-out;
 }
+@media (max-width: 640px) {
+    .slider-list {
+        display: none;
+    }
+}
 </style>

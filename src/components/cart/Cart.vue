@@ -1,12 +1,14 @@
 <template>
     <div class="cart">
-        <router-link :to="{name: 'catalog'}">
-            <div class="product-catalog-in__cart"></div>
-        </router-link>
-            <p class="cart-empty" 
+        <p class="cart-empty" 
                 v-if="!CART_ARR.length">
                 <span>Your cart is empty</span>
             </p>
+        <div class="cart-left">
+            <router-link :to="{name: 'catalog'}">
+                <div class="product-catalog-in__cart"></div>
+            </router-link>
+
             <cart-item
                 v-for="(elem, index) in CART_ARR"
                 :key="elem.id"
@@ -15,7 +17,9 @@
                 @increment="increment(index)"
                 @decrement="decrement(index)"
             />
-        <div class="cart-sum" v-show="totalCartSum >= 1">
+        </div>
+        <div class="cart-right">
+            <div class="cart-sum" v-show="totalCartSum >= 1">
             <p class="cart-sum__order">Order summary</p>
             <p class="cart-sum__calculate">Shipping calculated at checkout</p>
             <div class="line"></div>
@@ -67,9 +71,10 @@
                                 <img src="@/assets/svg/pay/pay-6.svg">
                             </li>
                         </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>      
     </div>
 </template>
 
@@ -132,20 +137,22 @@ export default {
 <style lang="scss" scoped>
 .cart {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    // flex-direction: column;
     margin: 200px 0px 50px 0px;
-    min-height: 800px;
+    min-height: 900px;
 }
 .cart-sum {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    // position: absolute;
     margin-top: 30px;
-    margin-left: 850px;
+    margin-right: 470px;
+    // margin-left: 850px;
     min-width: 500px;
-    height: 790px;
-    top: 30px;
-    right: 280px;
+    // height: 790px;
+    // top: 30px;
+    // right: 280px;
     padding: 50px 50px;
     background: rgb(241, 242, 243);
     color: rgb(5, 5, 5);
@@ -320,5 +327,14 @@ export default {
     font-family: 'Lucida Sans Unicode';
     font-size: 18px;
     margin-bottom: 25px;
+}
+
+@media (max-width: 1930px) {
+    .cart {
+        flex-direction: column;
+    }
+    .cart-sum {
+        max-width: 500px;
+    }
 }
 </style>

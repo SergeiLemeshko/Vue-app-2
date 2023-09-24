@@ -23,10 +23,10 @@
         </div>
         <div class="product-catalog__list">
             <product-item
-            v-for="item in searchProducts"
-            :key="id"
-            :item_ware="item"
-            @addInCart="addInCart"
+                v-for="item in searchProducts"
+                :key="id"
+                :item_ware="item"
+                @addInCart="addInCart"
             />
         </div>
     </div>
@@ -177,14 +177,12 @@ $font-family: 'Lucida Sans Unicode';
     max-width: 2200px;
     padding: 0px 30px 30px 30px;
 }
-
 .product-catalog__list {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
     grid-gap: 10px;
 }
-
 .product-catalog__cart {
     position: fixed;
     width: 50px;
@@ -228,4 +226,16 @@ $font-family: 'Lucida Sans Unicode';
     display: flex;
     justify-content: end;
 }
+
+@media (max-width: 640px) {
+    .product-catalog {
+        margin: 0 auto;
+        max-width: 2200px;
+        padding: 0px 30px 30px 30px;
+    }
+    .product-catalog__list {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
 </style>

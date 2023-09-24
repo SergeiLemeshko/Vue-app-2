@@ -172,4 +172,107 @@ $font-family: 'Lucida Sans Unicode';
 .footer-bottom-icons__item:last-child {
     margin-right: 0px;
 }
+
+@media (max-width: 1350px) {
+    .footer {
+        padding: 40px 150px;
+    }
+    .footer-bottom-icons__item {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer {
+        height: 750px;
+        padding: 40px 250px;
+    }
+    .footer-top {
+        flex-wrap: wrap;
+    }
+    .footer-bottom {
+        flex-wrap: wrap;
+    }
+    .footer-support__menu {
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
+    .footer-company__menu {
+        margin-right: 20px;
+    }
+    .footer-conditions__menu {
+        margin-right: 20px;
+    }
+    .footer-info__menu {
+        margin-right: 20px;
+    }
+    .footer-bottom__left {
+        & span {
+            display: block;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 865px) {
+    .footer {
+        height: 750px;
+        padding: 40px 190px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        height: 750px;
+        padding: 40px 140px;
+        margin-top: 25px;
+    }
+    .footer-bottom-icons__item {
+        margin-right: 6px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer {
+        height: 940px;
+        padding: 40px 190px;
+        margin-top: 20px;
+
+        & p {
+            margin-bottom: 5px;
+        }
+    }
+    .footer-support__menu {
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+    .footer-company__menu {
+        margin-left: 5px;
+    }
+    .footer-conditions__menu {
+        margin-left: 5px;
+    }
+    .footer-info__menu {
+        margin-left: 5px;
+    }
+    .footer-bottom-icons__item {
+        margin-right: 6px;
+        width: 40px;
+    }
+    .footer-top {
+        margin-bottom: 15px;
+
+        & li {
+            margin-bottom: 10px;
+        }
+    }
+}
+@media (max-width: 520px) {
+    .footer {
+        height: 940px;
+        padding: 40px 150px;
+        margin-top: 20px;
+    }
+}
 </style>

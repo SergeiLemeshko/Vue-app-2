@@ -72,4 +72,15 @@ img {
 .product-item:hover img {
     transform: scale(1.1);
 }
+
+@media (max-width: 640px) {
+    .product-item{
+            margin-top: 50px;
+            
+        &__img {
+            width: 250px;
+            height: 250px;
+        }
+    }
+}
 </style>

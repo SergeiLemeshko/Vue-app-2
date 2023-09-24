@@ -122,4 +122,11 @@ img {
 .cart-item:hover img {
     transform: scale(1.1);
 }
+
+@media (max-width: 2070px) {
+    .cart-item {
+        margin-left: 100px;
+    }
+}
+
 </style>
