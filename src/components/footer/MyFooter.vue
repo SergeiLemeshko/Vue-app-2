@@ -194,7 +194,7 @@ $font-family: 'Lucida Sans Unicode';
         flex-wrap: wrap;
     }
     .footer-support__menu {
-        margin-right: 20px;
+        margin-right: 21px;
         margin-bottom: 30px;
     }
     .footer-company__menu {

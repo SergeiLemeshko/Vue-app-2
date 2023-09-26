@@ -37,4 +37,18 @@ $font-family: 'Lucida Sans Unicode';
         transition: ease-in-out 0.3s;
     }
 }
+@media (max-width: 992px) {
+    .btn-product {
+        width: 130px;
+        height: 50px;
+        padding: 6px;
+    }
+}
+@media (max-width: 767px) {
+    .btn-product {
+        width: 100px;
+        height: 40px;
+        padding: 4px;
+    }
+}
 </style>

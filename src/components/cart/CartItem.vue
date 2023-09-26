@@ -5,18 +5,20 @@
             :src="require('@/assets/img/' + cart_item_info.img)" 
             alt="image"
         >
-        <div class="cart-item__info">
-            <p class="cart-item__info-name">{{ cart_item_info.name }}</p>
-            <p class="cart-item__info-price">Price: {{ cart_item_info.price }}</p>
-        </div>
-        <div 
-            class="cart-item__sum">
-            <p>Quantity</p>
-            <span>
-                <span class="sum__minus" @click="decrElem">-</span>
-                    {{ cart_item_info.sum }}
-                <span class="sum__plus" @click="incrElem">+</span>
-            </span>
+        <div class="cart-item__info-root">
+            <div class="cart-item__info">
+                <p class="cart-item__info-name">{{ cart_item_info.name }}</p>
+                <p class="cart-item__info-price">Price: {{ cart_item_info.price }}</p>
+            </div>
+            <div 
+                class="cart-item__sum">
+                <p>Quantity</p>
+                <span>
+                    <span class="sum__minus" @click="decrElem">-</span>
+                        {{ cart_item_info.sum }}
+                    <span class="sum__plus" @click="incrElem">+</span>
+                </span>
+            </div>
         </div>
         <btn-product @click="deleteWareFromCart">Delete</btn-product>
     </div>
@@ -75,7 +77,6 @@ $font-family: 'Lucida Sans Unicode';
         width: 250px;
         height: 250px;
         border: 1px solid #e9e7e7;
-
     }
 }
 .cart-item__info-name {
@@ -88,6 +89,9 @@ $font-family: 'Lucida Sans Unicode';
     margin-bottom: 5px;
     text-align: center;
     font-family: $font-family;
+}
+.cart-item__info-root {
+    display: flex;
 }
 .cart-item__info {
     margin-top: -3px;
@@ -125,8 +129,66 @@ img {
 
 @media (max-width: 2070px) {
     .cart-item {
-        margin-left: 100px;
+        margin-left: 150px;
+    }
+}
+@media (max-width: 1880px) {
+    .cart-item {
+        width: 760px;
+        margin-left: 170px;
+    }
+}
+@media (max-width: 1610px) {
+    .cart-item__sum {
+        margin: -13px 50px 0px 50px;
+    }
+    .cart-item { 
+        margin: 0 auto;
     }
 }
 
+@media (max-width: 992px) {
+    .cart-item {
+        width: 605px;
+
+        &__img {
+            margin-right: 10px;
+            width: 220px;
+            height: 210px;
+        }
+    }
+    .cart-item__sum {
+        margin: -13px 20px 0px 7px;
+
+            & span {
+            margin-top: 5px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .cart-item {
+        width: 460px;
+        height: 200px;
+
+        &__img {
+            margin-right: 5px;
+            width: 180px;
+            height: 180px;
+        }
+    }
+    .cart-item__info-root {
+        flex-direction: column;
+    }
+    .cart-item__sum {
+        margin: -13px 20px 0px 7px;
+
+            & p {
+            margin-top: 25px;
+        }
+    }
+    .cart-item__info-name {
+        margin-bottom: 5px;
+        font-size: 1rem;
+    }
+}
 </style>

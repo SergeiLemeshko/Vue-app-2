@@ -138,21 +138,14 @@ export default {
 .cart {
     display: flex;
     justify-content: space-between;
-    // flex-direction: column;
     margin: 200px 0px 50px 0px;
-    min-height: 900px;
 }
 .cart-sum {
     display: flex;
     flex-direction: column;
-    // position: absolute;
     margin-top: 30px;
     margin-right: 470px;
-    // margin-left: 850px;
-    min-width: 500px;
-    // height: 790px;
-    // top: 30px;
-    // right: 280px;
+    width: 500px;
     padding: 50px 50px;
     background: rgb(241, 242, 243);
     color: rgb(5, 5, 5);
@@ -328,13 +321,42 @@ export default {
     font-size: 18px;
     margin-bottom: 25px;
 }
+.cart-left {
+    margin-right: 20px;
+}
 
-@media (max-width: 1930px) {
+@media (max-width: 2250px) {
+    .cart-sum {
+        margin-right: 300px;
+    }
+}
+@media (max-width: 1805px) {
+    .cart-sum {
+        margin-right: 240px;
+        margin-left: 20px;
+    }
+}
+@media (max-width: 1610px) {
+    .cart-sum {
+        margin-right: 70px;
+    }
     .cart {
         flex-direction: column;
     }
     .cart-sum {
-        max-width: 500px;
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+}
+@media (max-width: 767px) {
+    .cart-right {
+        width: 450px;
+        margin: 0 auto;
+    }
+    .cart-sum {
+        padding: 40px 40px;
+        width: 400px;
     }
 }
 </style>
