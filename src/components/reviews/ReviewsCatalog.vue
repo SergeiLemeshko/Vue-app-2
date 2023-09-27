@@ -74,17 +74,21 @@ export default {
 <style lang="scss">
 .reviews-catalog {
     margin: 0 auto;
-    width: 1000px;
+    width: 920px;
     margin-top: 160px;
     margin-bottom: 50px;
 
+    & div {
+        margin-left: -50px;
+    }
+
     & div:nth-child(2n) {
-        margin-left: 50px;
+        margin-left: 30px;
     }
 
     & h1 {
         margin: 0 auto;
-        width: 400px;
+        text-align: center;
         margin-bottom: 35px;
         font-family: 'Lucida Sans Unicode';
         font-size: 2.5rem;
@@ -108,6 +112,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 50px !important;
 }
 .reviews-item__individual {
     width: 790px;
@@ -117,5 +122,33 @@ export default {
     padding: 10px;
     margin-bottom: 25px;
     font-size: 20px;
+}
+@media (max-width: 992px) {
+    .reviews-catalog {
+        width: 660px;
+
+        & h1 {
+            font-size: 2rem;
+        }
+    }
+
+    .reviews-item__individual {
+        width: 660px;
+        height: 120px;
+    }
+}
+@media (max-width: 767px) {
+    .reviews-catalog {
+        width: 420px;
+
+        & h1 {
+            font-size: 1.7rem;
+        }
+    }
+
+    .reviews-item__individual {
+        width: 390px;
+        height: 140px;
+    }
 }
 </style>

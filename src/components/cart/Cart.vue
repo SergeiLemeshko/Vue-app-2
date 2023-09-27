@@ -139,6 +139,7 @@ export default {
     display: flex;
     justify-content: space-between;
     margin: 200px 0px 50px 0px;
+    min-height: 900px;
 }
 .cart-sum {
     display: flex;

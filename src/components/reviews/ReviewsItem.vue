@@ -39,4 +39,17 @@ export default {
     font-size: 18px;
     margin-left: 20px;
 }
+
+@media (max-width: 992px) {
+    .reviews-item {
+        width: 660px;
+        height: 120px;
+    }
+}
+@media (max-width: 767px) {
+    .reviews-item {
+        width: 390px;
+        height: 140px;
+    }
+}
 </style>

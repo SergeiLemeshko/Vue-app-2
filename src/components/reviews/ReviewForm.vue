@@ -84,8 +84,8 @@ export default {
     margin: auto;
     border-radius: 4px;
     background: white;
-    min-height: 520px;
-    min-width: 800px;
+    height: 520px;
+    width: 800px;
     padding: 20px 50px;
 
     & p {
@@ -128,5 +128,47 @@ textarea::placeholder {
     display: flex;
     justify-content: center;
     margin-top: 40px;
+    margin-left: 0;
+}
+
+@media (max-width: 992px) {
+    .review-form__content {
+        height: 420px;
+        width: 700px;
+        padding: 20px 50px;
+
+        & label {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Lucida Sans Unicode';
+            font-size: 24px;
+            font-weight: 700;
+            margin: 10px 0px 20px 0px;
+        }
+    }
+
+    textarea {
+        resize: none;
+        height: 170px;
+        padding: 10px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .review-form__content {
+        height: 380px;
+        width: 460px;
+        padding: 20px 30px;
+    }
+
+    .review-form__btn {
+        margin-top: 20px;
+    }  
+    .review-form__excess {
+        & p {
+            width: 500px;
+        }
+    }
 }
 </style>

@@ -28,11 +28,18 @@ export default {
     cursor: pointer;
     font-family: 'Lucida Sans Unicode';
     letter-spacing: 0.1rem;
+    margin-left: 50px;
 
     &:hover {
         background: darken(#4b4b4b, 7%);
         color: #f5eeee;
         transition: ease-in-out 0.3s;
+    }
+}
+
+@media (max-width: 992px) {
+    .btn-reviews {
+        margin-top: 0px;
     }
 }
 </style>
