@@ -19,7 +19,7 @@
         <div class="btn-add">
             <btn-reviews
                 @click="showForm">
-                Добавить отзыв
+                Add review
             </btn-reviews>
         </div>
     </div>

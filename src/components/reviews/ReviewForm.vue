@@ -20,7 +20,7 @@
             </p>
             <div class="review-form__btn">
                 <btn-reviews>
-                    Add review
+                    Add 
                 </btn-reviews>
             </div>
         </div>
@@ -79,7 +79,6 @@ export default {
     display: flex;
     background: rgba(0,0,0, 0.5);
 }
-
 .review-form__content {
     margin: auto;
     border-radius: 4px;

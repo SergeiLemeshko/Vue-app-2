@@ -9,8 +9,8 @@
             > 
         </div>
         <p class="product-item__name">{{ item_ware.name }}</p>
-        <p class="product-item__price">Цена: {{ item_ware.price }}</p>
-        <btn-product @click="addInCart">В корзину</btn-product>
+        <p class="product-item__price">Price: {{ item_ware.price }}</p>
+        <btn-product @click="addInCart">Add to cart</btn-product>
     </div>
 </template>
 

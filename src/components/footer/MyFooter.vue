@@ -140,14 +140,6 @@ $font-family: 'Lucida Sans Unicode';
         color: #9e9d9d;
     }
 }
-.footer-support__menu {
-}
-.footer-company__menu {
-}
-.footer-conditions__menu {
-}
-.footer-info__menu {
-}
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -156,12 +148,6 @@ $font-family: 'Lucida Sans Unicode';
     & span {
         letter-spacing: 1px;
     }
-}
-.footer-bottom__right {
-}
-.footer-bottom-icons__root {
-}
-.footer-bottom-icons__list {
 }
 .footer-bottom-icons__item {
     display: inline-block;

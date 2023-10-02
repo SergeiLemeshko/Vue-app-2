@@ -165,7 +165,7 @@ export default {
         searchProducts() {
             let productList = this.ware;
             return productList.filter(item => item.name.includes(this.searchWare))
-        },
+        }
     }
 }
 </script>
@@ -237,5 +237,4 @@ $font-family: 'Lucida Sans Unicode';
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
 }
-
 </style>

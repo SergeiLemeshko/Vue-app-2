@@ -10,7 +10,7 @@ export const sliderModule = {
             {id: 6, name: 'img6', img: '6.jpg'}
         ],              
         currentSlideIndex: 0, // устанавливаю индекс слайдера
-        isHhh: false
+        isHide: false
     }),
     getters: {
         SLIDER_ITEMS(state) {
@@ -20,15 +20,15 @@ export const sliderModule = {
     mutations: {
         NEXT_SLIDE(state) {
             if(state.currentSlideIndex === 5) {
-                this.isHhh = true
+                this.isHide = true
             } 
             if(state.currentSlideIndex === 0) {
-                this.isHhh = false
+                this.isHide = false
             }
-            if(this.isHhh === false) {
+            if(this.isHide === false) {
                 state.currentSlideIndex++;
             }
-            if(this.isHhh === true) {
+            if(this.isHide === true) {
                 state.currentSlideIndex--;
             }            
         }

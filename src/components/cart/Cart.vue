@@ -8,7 +8,6 @@
             <router-link :to="{name: 'catalog'}">
                 <div class="product-catalog-in__cart"></div>
             </router-link>
-
             <cart-item
                 v-for="(elem, index) in CART_ARR"
                 :key="elem.id"

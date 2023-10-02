@@ -6,7 +6,6 @@
 </template>
 
 <script>
-
 export default {
     name: "product-item",
     props: {
