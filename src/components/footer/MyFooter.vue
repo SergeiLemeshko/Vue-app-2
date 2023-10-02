@@ -55,7 +55,7 @@
                     <a href="https://www.facebook.com/" title="Facebook">Facebook</a>
                 </li>
                 <li>
-                    <a href="#" title="Linkedin">Linkedin</a>
+                    <a href="https://www.linkedin.com/feed/" title="Linkedin">Linkedin</a>
                 </li>
                 <li>
                     <a href="https://www.youtube.com/" title="Youtube">Youtube</a>

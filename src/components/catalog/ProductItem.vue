@@ -10,7 +10,7 @@
         </div>
         <p class="product-item__name">{{ item_ware.name }}</p>
         <p class="product-item__price">Price: {{ item_ware.price }}</p>
-        <btn-product @click="addInCart">Add to cart</btn-product>
+        <btn-product @click="addInCart">Add</btn-product>
     </div>
 </template>
 
